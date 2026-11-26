@@ -6,99 +6,215 @@
 <title>Indian Li-ion Packs to Japan: Export Plan Model</title>
 <style>
 :root{
-  --paper:#F5F3EE; --ink:#1E2124; --muted:#5E6369; --line:#D9D5CC; --soft:#ECE8DF;
-  --teal:#0E6B5E; --teal-l:#D6EAE5; --copper:#A9521F; --copper-l:#F4E3D8; --gold:#8A6D1D;
+  --bg:#EEF2F1; --panel:#FFFFFF; --ink:#18211F; --muted:#5A6966; --line:#DCE4E1; --soft:#F4F7F6;
+  --teal:#0E5E55; --teal-2:#2F8073; --teal-l:#DCEBE7; --teal-xl:#EDF5F2;
+  --copper:#B4552A; --copper-l:#F7E7DD; --sand:#F3EEDF;
+  --r:14px; --sh:0 1px 2px rgba(16,40,36,.05),0 6px 20px rgba(16,40,36,.06);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 "Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;line-height:1.2;margin:0}
-h1{font-size:30px}
-h2{font-size:22px;margin-bottom:6px}
-h3{font-size:16px;margin:18px 0 8px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Cambria,Georgia,"Times New Roman",serif;font-weight:700;line-height:1.2;margin:0;color:var(--ink)}
+h1{font-size:36px;letter-spacing:-.01em}
+h2{font-size:24px}
+h3{font-size:16.5px;margin:22px 0 10px}
 p{margin:6px 0 10px}
 a{color:var(--teal)}
-.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
-header.top{padding:26px 0 14px;border-bottom:2px solid var(--ink)}
-.kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.thesis{max-width:760px;color:var(--muted);margin-top:8px}
-.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-button,.btn{font:inherit;font-size:13px;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:5px 12px;border-radius:3px;cursor:pointer}
-button:hover{background:var(--ink);color:var(--paper)}
-button.on{background:var(--teal);border-color:var(--teal);color:#fff}
-nav.steps{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
-nav.steps .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px}
-nav.steps a{white-space:nowrap;text-decoration:none;color:var(--ink);font-size:13px;padding:4px 10px;border-radius:3px}
-nav.steps a b{color:var(--teal);margin-right:4px}
-nav.steps a:hover{background:var(--soft)}
-.grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:28px;padding-top:18px}
-@media(max-width:980px){.grid{grid-template-columns:minmax(0,1fr)}.plan{position:static!important;order:-1}}
-section.step{padding:20px 0 26px;border-bottom:1px solid var(--line);scroll-margin-top:52px}
-.stepno{font-family:Georgia,serif;color:var(--teal);font-size:14px;margin-bottom:2px}
-.lede{font-size:16px}
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
-@media(max-width:720px){.two{grid-template-columns:minmax(0,1fr)}}
-table{border-collapse:collapse;width:100%;font-size:13.5px;margin:6px 0 4px}
-th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
-th{font-weight:600;background:var(--soft);font-size:12.5px}
+b{font-weight:650}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* hero */
+header.top{padding:34px 0 26px;background:#E4ECE9;border-bottom:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:36px;align-items:end}
+.kicker{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.kicker span{color:var(--muted);font-weight:500}
+h1{margin:10px 0 0}
+.thesis{max-width:680px;color:#3E4C49;font-size:16px;margin-top:12px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kpi{background:var(--panel);border-radius:12px;padding:14px 16px;box-shadow:var(--sh);border:1px solid var(--line)}
+.kpi .v{font-family:Cambria,Georgia,serif;font-size:28px;font-weight:700;color:var(--teal);line-height:1.1}
+.kpi .v.c{color:var(--copper)}
+.kpi .l{font-size:12.5px;color:var(--muted);margin-top:4px}
+
+/* buttons */
+button{font:inherit;font-size:13.5px;font-weight:600;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;transition:all .15s}
+button:hover{border-color:var(--teal);color:var(--teal)}
+button.pri{background:var(--teal);border-color:var(--teal);color:#fff}
+button.pri:hover{background:#0B4C45;color:#fff}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(14,94,85,.3);outline-offset:2px}
+.seg{display:inline-flex;flex-wrap:wrap;gap:4px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px;margin:4px 0 10px}
+.seg button{border:0;background:transparent;padding:7px 16px;font-weight:600;color:var(--muted)}
+.seg button:hover{color:var(--teal);background:#fff}
+.seg button.on{background:var(--teal);color:#fff;box-shadow:0 2px 6px rgba(14,94,85,.25)}
+
+/* nav */
+nav.steps{position:sticky;top:0;z-index:20;background:rgba(238,242,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.steps .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+nav.steps a{display:flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none;color:var(--muted);font-size:13.5px;font-weight:600;padding:6px 14px 6px 6px;border-radius:999px;transition:all .15s}
+nav.steps a b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--teal);font-size:12px}
+nav.steps a:hover{background:#fff;color:var(--ink)}
+nav.steps a.active{background:var(--teal);color:#fff}
+nav.steps a.active b{background:#fff;border-color:#fff}
+.prog{height:3px;background:transparent}
+.prog span{display:block;height:100%;width:0;background:var(--teal);transition:width .1s}
+
+/* layout */
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:26px;padding-top:24px;padding-bottom:20px}
+section.step{background:var(--panel);border-radius:var(--r);box-shadow:var(--sh);border:1px solid var(--line);padding:26px 30px 28px;margin-bottom:22px;scroll-margin-top:72px}
+.shead{display:flex;gap:14px;align-items:center;margin-bottom:8px}
+.badge{flex:none;width:42px;height:42px;border-radius:12px;background:var(--teal-l);color:var(--teal);display:grid;place-items:center;font:700 19px Cambria,Georgia,serif}
+.stepno{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.lede{font-size:16.5px;color:#2E3A37}
+.intro{color:#3E4C49;max-width:820px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.two.wl{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+#evid td.l{min-width:210px}
+.nw td{white-space:nowrap}
+.sub{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:4px 18px 16px}
+hr.sep{border:0;border-top:1px solid var(--line);margin:22px 0 4px}
+
+/* tables */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:12px;margin:8px 0 6px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right;vertical-align:middle}
+tr:last-child td{border-bottom:0}
+th{font-weight:650;background:var(--teal-xl);color:#2C4440;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase}
 th:first-child,td:first-child{text-align:left}
 td.l,th.l{text-align:left}
-td.mono{white-space:nowrap}
-.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
-@media(max-width:600px){.ctl{grid-template-columns:1fr 96px 112px}h1{font-size:24px}.wrap{padding:0 14px}}
-tr.win td{background:var(--teal-l);font-weight:600}
-.src{font-size:12px;color:var(--muted);margin-top:4px}
-.ladder{display:flex;flex-direction:column;gap:6px;margin:8px 0}
-.ladder div{display:flex;min-width:0;gap:12px;align-items:baseline;padding:6px 10px;border-left:4px solid var(--teal);background:#fff}
-.ladder div:nth-child(2){margin-left:18px}.ladder div:nth-child(3){margin-left:36px}.ladder div:nth-child(4){margin-left:54px;border-color:var(--copper)}
-.ladder code{font:600 15px/1 Consolas,monospace;min-width:92px}
-.ctl{display:grid;grid-template-columns:1fr 140px 130px;gap:10px;align-items:center;padding:5px 0;border-bottom:1px dotted var(--line)}
-.ctl label{font-size:13.5px}
-.ctl input[type=range]{width:100%;accent-color:var(--teal)}
-.ctl input[type=number]{width:78px;font:inherit;font-size:13px;padding:3px 5px;border:1px solid var(--line);background:#fff;text-align:right}
-.ctl .u{font-size:11.5px;color:var(--muted)}
-.big{font-family:Georgia,serif;font-size:30px;color:var(--teal);line-height:1}
-.note{border-left:3px solid var(--copper);background:var(--copper-l);padding:8px 12px;margin:10px 0;font-size:14px}
-.okay{border-left:3px solid var(--teal);background:var(--teal-l);padding:8px 12px;margin:10px 0;font-size:14px}
-.calc{font-family:Consolas,monospace;font-size:13.5px;background:#fff;border:1px solid var(--line);padding:8px 10px;margin:6px 0}
-.presets{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
-svg text{font-family:"Segoe UI",system-ui,Arial,sans-serif}
-aside.plan{position:sticky;top:56px;align-self:start;background:#fff;border:1px solid var(--ink);padding:16px 18px}
-.plan h2{font-size:18px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
-.plan dl{display:grid;grid-template-columns:1fr auto;gap:6px 10px;margin:0}
-.plan dt{font-size:12.5px;color:var(--muted);white-space:nowrap}
-.plan dd{margin:0;text-align:right;font-weight:600;font-size:14.5px}
-.plan dd.neg{color:var(--copper)}
-.plan .hl{grid-column:1/-1;font-family:Georgia,serif;font-size:21px;color:var(--teal);margin:2px 0 6px}
-.plan .foot{font-size:11.5px;color:var(--muted);margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
-.pill{display:inline-block;font-size:11.5px;padding:1px 7px;border-radius:10px;background:var(--soft);margin-left:4px}
-.checks label{display:block;font-size:13.5px;padding:3px 0}
-.bar{height:8px;background:var(--soft);border-radius:4px;overflow:hidden;margin-top:6px}
-.bar span{display:block;height:100%;background:var(--teal)}
-select{font:inherit;font-size:13.5px;padding:3px 6px;border:1px solid var(--line);background:#fff}
-footer{padding:22px 0 40px;font-size:12.5px;color:var(--muted)}
+tbody tr:hover td,table tr:hover td{background:#FAFCFB}
+tr.win td{background:var(--teal-l)!important;font-weight:650}
+tr.win td:first-child{box-shadow:inset 4px 0 0 var(--teal)}
+tr.tot td{background:var(--soft);font-weight:700}
+.sc{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:7px;font-weight:700;font-size:12.5px;margin-left:3px}
+.s1{background:#F1D2C2;color:#7A3317}.s2{background:#F7E4D3;color:#7A4A1F}.s3{background:#F1EED8;color:#5E5620}.s4{background:#D8EBE3;color:#1E5A4E}.s5{background:#B9DCCF;color:#0B4A42}
+th.h1{background:#F6E3D8}th.h2{background:#F8EEE4}th.h3{background:#F3F1E4}th.h4{background:#E2EFE9}th.h5{background:#CFE6DD}
+.chip{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px}
+.chip.g{background:var(--teal-l);color:var(--teal)}
+.chip.c{background:var(--copper-l);color:var(--copper)}
+.chip.n{background:var(--soft);color:var(--muted);font-weight:600}
+.src{font-size:12px;color:var(--muted);margin-top:6px}
+
+/* product ladder */
+.ladder{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.ladder div{display:flex;gap:14px;align-items:center;padding:10px 14px;border-radius:10px;background:var(--teal-xl);border:1px solid var(--line)}
+.ladder div:nth-child(2){margin-left:16px}.ladder div:nth-child(3){margin-left:32px;background:var(--teal-l)}.ladder div:nth-child(4){margin-left:48px;background:var(--copper-l)}
+.ladder code{font:700 14.5px/1 Consolas,"Courier New",monospace;min-width:96px;color:var(--teal)}
+.ladder div:nth-child(4) code{color:var(--copper)}
+.ladder span{font-size:13.5px}
+
+/* controls */
+.ctl{display:grid;grid-template-columns:minmax(0,1fr) minmax(90px,140px) 118px;gap:14px;align-items:center;padding:8px 0;border-bottom:1px solid var(--soft)}
+.ctl label{font-size:13.5px;font-weight:500}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--teal) 0,var(--teal) var(--p,50%),#D5E0DC var(--p,50%),#D5E0DC 100%);outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--teal);box-shadow:0 1px 4px rgba(0,0,0,.2)}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
+input[type=number],select{font:inherit;font-size:13.5px;font-weight:600;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+input[type=number]{width:82px;text-align:right}
+input[type=number]:hover,select:hover{border-color:#B7C8C3}
+.u{white-space:nowrap;font-size:11.5px;color:var(--muted);margin-left:4px}
+.wv{font:700 13.5px Consolas,monospace;color:var(--teal)}
+.big{font-family:Cambria,Georgia,serif;font-size:30px;color:var(--teal);line-height:1}
+
+/* callouts */
+.note,.okay{border-radius:10px;padding:12px 16px;margin:12px 0;font-size:14px}
+.note{background:var(--copper-l);border:1px solid #EFD2C0;color:#4A2A17}
+.okay{background:var(--teal-l);border:1px solid #BFDAD2;color:#163E38}
+.calc{font:13.5px/1.7 Consolas,"Courier New",monospace;background:var(--sand);border-radius:10px;padding:10px 14px;margin:10px 0;color:#3A3420}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--copper-l);color:var(--copper);margin-left:4px}
+
+/* access */
+.acc-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:6px 0 10px}
+.acc-stats>div{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.acc-stats .v{font:700 24px/1.1 Cambria,Georgia,serif;color:var(--teal)}
+.acc-stats .v.c{color:var(--copper)}
+.acc-stats .l{font-size:12px;color:var(--muted);margin-top:4px}
+.three{list-style:none;padding:0;margin:8px 0;counter-reset:t}
+.three li{counter-increment:t;display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--soft);font-size:14px}
+.three li:last-child{border-bottom:0}
+.three li:before{content:counter(t);flex:none;width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.route{display:flex;align-items:flex-start;margin:14px 0 8px}
+.route .st{flex:1;text-align:center;position:relative;font-size:12px;color:var(--muted);padding:0 4px}
+.route .st:before{content:"";position:absolute;top:8px;left:-50%;width:100%;height:3px;background:var(--teal-l);z-index:0}
+.route .st:first-child:before{display:none}
+.route .dot{position:relative;z-index:1;width:19px;height:19px;border-radius:50%;background:#fff;border:3px solid var(--teal);margin:0 auto 6px}
+.route .st:last-child .dot{background:var(--teal)}
+.route b{display:block;color:var(--ink);font-size:12.5px}
+.checks{display:flex;flex-direction:column;gap:6px}
+.ck{display:flex;gap:10px;align-items:center;padding:9px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;font-size:13.5px;transition:all .15s;background:#fff}
+.ck:hover{border-color:#B7C8C3}
+.ck input{accent-color:var(--teal);width:17px;height:17px;flex:none}
+.ck.on{background:var(--teal-l);border-color:#BFDAD2}
+.bar{height:10px;background:#DCE4E1;border-radius:999px;overflow:hidden;margin-top:12px}
+.bar span{display:block;height:100%;background:var(--teal);border-radius:999px;transition:width .3s}
+
+/* plan card */
+aside.plan{position:sticky;top:74px;align-self:start;background:var(--panel);border-radius:var(--r);box-shadow:var(--sh);border:1px solid var(--line);overflow:hidden}
+.ph{background:var(--teal-l);padding:16px 20px 14px}
+.ph .k{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.ph h2{font-size:20px;margin-top:4px}
+.ph .m{font-size:13.5px;color:#2C4440;margin-top:2px}
+.pbody{padding:14px 20px 16px}
+.hl{font-family:Cambria,Georgia,serif;font-size:24px;font-weight:700;color:var(--teal);line-height:1.15}
+.hls{font-size:12px;color:var(--muted);margin-bottom:12px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.duo>div{background:var(--soft);border-radius:10px;padding:10px 12px;border:1px solid var(--line)}
+.duo .v{font:700 18px/1.2 Cambria,Georgia,serif;color:var(--teal)}
+.duo .v .neg,.neg{color:var(--copper)!important}
+.duo .l{font-size:11.5px;color:var(--muted)}
+.meter{margin:4px 0 14px}
+.meter .t{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.meter .tr{position:relative;height:10px;border-radius:999px;background:var(--teal-l);margin-top:6px;overflow:hidden}
+.meter .tr span{position:absolute;left:0;top:0;bottom:0;background:var(--copper);opacity:.85;border-radius:999px}
+.plan dl{display:grid;grid-template-columns:1fr auto;gap:7px 12px;margin:0}
+.plan dt{font-size:12.5px;color:var(--muted)}
+.plan dd{margin:0;text-align:right;font-weight:650;font-size:13.5px}
+.plan .foot{font-size:11.5px;color:var(--muted);margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
+
+/* mobile summary bar */
+.mbar{display:none}
+footer{padding:8px 0 50px;font-size:12.5px;color:var(--muted)}
+footer .wrap>div{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 22px}
 .mono{font-family:Consolas,monospace}
+svg text{font-family:"Segoe UI",system-ui,Arial,sans-serif}
+
+@media(max-width:1080px){.hero{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:980px){.grid{grid-template-columns:minmax(0,1fr)}aside.plan{position:static;order:-1}
+  .mbar{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:30;background:var(--teal);color:#fff;border-radius:14px;padding:10px 14px;gap:10px;justify-content:space-between;box-shadow:0 8px 24px rgba(0,0,0,.2);text-decoration:none}
+  .mbar div{font-size:11px;opacity:.85}.mbar b{display:block;font-size:14px;opacity:1}
+  body{padding-bottom:76px}}
+@media(max-width:720px){.two{grid-template-columns:minmax(0,1fr)}.acc-stats{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.wrap{padding:0 12px}h1{font-size:26px}section.step{padding:18px 16px}
+  .ctl{grid-template-columns:minmax(0,1fr) 112px;gap:6px 12px}.ctl label{grid-column:1/-1}
+  .kpi .v{font-size:22px}.ladder div:nth-child(n){margin-left:0}}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap">
-  <div class="kicker">Trade Analytics · Individual assignment · Export business model · Pransh Gupta</div>
-  <h1>Indian lithium-ion battery packs: an export plan you can test</h1>
-  <p class="thesis">India has no revealed edge in lithium-ion batteries and buys 69 times more than it sells. The opening is narrow: Japanese buyers who want a second source beside China, where trust and traceability count as much as price. Change any input and the plan on the right recalculates.</p>
-  <div class="tools"><button id="reset" type="button">Reset to base case</button><button id="csv" type="button">Download market evidence (CSV)</button></div>
+<header class="top"><div class="wrap hero">
+  <div>
+    <div class="kicker">Trade Analytics <span>· Export business model · Pransh Gupta, DM271054</span></div>
+    <h1>Indian lithium-ion battery packs: an export plan you can test</h1>
+    <p class="thesis">India has no revealed edge in lithium-ion batteries and buys 69 times more than it sells. The opening is narrow: Japanese buyers who want a second source beside China, where trust and traceability count as much as price. Change any input and the plan recalculates.</p>
+    <div class="tools"><button id="reset" type="button" class="pri">Reset to base case</button><button id="csv" type="button">Download market evidence (CSV)</button></div>
+  </div>
+  <div class="kpis" aria-live="polite">
+    <div class="kpi"><div class="v c" id="hRca"></div><div class="l">India's RCA in HS 8507.60: no country-level edge</div></div>
+    <div class="kpi"><div class="v" id="hMkt"></div><div class="l">First market, from the weighted scorecard</div></div>
+    <div class="kpi"><div class="v" id="hRev"></div><div class="l">Year-1 revenue at the current inputs</div></div>
+    <div class="kpi"><div class="v" id="hProf"></div><div class="l">Year-1 profit, base case</div></div>
+  </div>
 </div></header>
 
 <nav class="steps" aria-label="Steps"><div class="wrap">
   <a href="#s1"><b>1</b>Product and code</a><a href="#s2"><b>2</b>Edge</a><a href="#s3"><b>3</b>Market choice</a>
   <a href="#s4"><b>4</b>How much</a><a href="#s5"><b>5</b>Money and risk</a><a href="#s6"><b>6</b>Access</a>
-</div></nav>
+</div><div class="prog"><span id="prog"></span></div></nav>
 
 <div class="wrap grid">
 <main>
 
 <section class="step" id="s1">
-  <div class="stepno">Step 1</div>
-  <h2>What exactly are we exporting?</h2>
+  <div class="shead"><div class="badge">1</div><div><div class="stepno">Step 1 of 6 · Product and code</div><h2>What exactly are we exporting?</h2></div></div>
   <div class="two">
     <div>
       <div class="ladder">
@@ -109,7 +225,7 @@ footer{padding:22px 0 40px;font-size:12.5px;color:var(--muted)}
       </div>
     </div>
     <div>
-      <h3 style="margin-top:6px">The product</h3>
+      <h3 style="margin-top:8px">The product</h3>
       <p>A 5 kWh lithium iron phosphate (LFP) pack, 48 V, about 40 kg, for home and telecom backup and light electric vehicles. Cells are imported without duty under Advance Authorisation, then built into packs in Tamil Nadu with an Indian battery management system.</p>
       <p><b>Not in scope:</b> bare cells (India makes about 1 GWh, too little to export) and phone batteries (sold by the hundred million at under $5 a unit).</p>
     </div>
@@ -118,24 +234,23 @@ footer{padding:22px 0 40px;font-size:12.5px;color:var(--muted)}
 </section>
 
 <section class="step" id="s2">
-  <div class="stepno">Step 2</div>
-  <h2>Does India have an edge?</h2>
+  <div class="shead"><div class="badge">2</div><div><div class="stepno">Step 2 of 6 · Edge</div><h2>Does India have an edge?</h2></div></div>
   <p class="lede">Not as a country. India is the 39th exporter, with 0.05% of world exports, while it imports $4.1 billion a year.</p>
   <div class="two">
     <div>
       <h3>Revealed comparative advantage</h3>
-      <div class="ctl"><label for="shP">India share of world 8507.60 exports</label><input type="range" id="shP" min="0.01" max="5" step="0.01"><span><input type="number" id="shPn" min="0.01" max="5" step="0.01"> <span class="u">%</span></span></div>
-      <div class="ctl"><label for="shW">India share of all world exports</label><input type="range" id="shW" min="0.5" max="5" step="0.01"><span><input type="number" id="shWn" min="0.5" max="5" step="0.01"> <span class="u">%</span></span></div>
+      <div class="ctl"><label for="shP">India share of world 8507.60 exports</label><input type="range" id="shP" min="0.01" max="5" step="0.01"><span><input type="number" id="shPn" min="0.01" max="5" step="0.01"><span class="u">%</span></span></div>
+      <div class="ctl"><label for="shW">India share of all world exports</label><input type="range" id="shW" min="0.5" max="5" step="0.01"><span><input type="number" id="shWn" min="0.5" max="5" step="0.01"><span class="u">%</span></span></div>
       <div class="calc" id="rcaCalc"></div>
       <p id="rcaTxt"></p>
-      <table>
+      <div class="tw"><table>
         <tr><th>2025, HS 8507.60</th><th>India</th><th>World</th></tr>
         <tr><td>Exports</td><td>$59.7 m</td><td>$125.5 bn</td></tr>
         <tr><td>Share, rank</td><td>0.05%, 39th</td><td>China 61%</td></tr>
         <tr><td>Unit value</td><td>$15.9 a unit</td><td>China $15,706/t</td></tr>
         <tr><td>Imports</td><td>$4.09 bn</td><td>India is 8th largest buyer</td></tr>
         <tr><td>Grubel-Lloyd index</td><td>0.03</td><td>Almost all one-way</td></tr>
-      </table>
+      </table></div>
       <div class="src">Source: ITC Trade Map, direct data, 2025. India reports quantity in units, most others in tonnes.</div>
     </div>
     <div>
@@ -145,25 +260,25 @@ footer{padding:22px 0 40px;font-size:12.5px;color:var(--muted)}
       <div class="src">Source: Trade Map time series 2016-2025, and Japan import data by supplier, 2025.</div>
     </div>
   </div>
+  <hr class="sep">
   <h3>Who are the rivals? Export similarity by destination</h3>
   <div class="two">
     <div id="esi"></div>
     <div>
       <p>ESI uses the Session 4 formula, the sum of the smaller of two export shares, with destination markets as the categories because we compare one product. A high score means India and the rival chase the same buyers.</p>
-      <p><b>China (28.8), Viet Nam (28.4) and Korea (21.8)</b> overlap most. In Japan, China holds 81% and Korea 9%, while India is sixth with 0.8%. We cannot beat China on cost. We can be the second source Japanese buyers are told to find, with Indian-built safety electronics and traceable cells.</p>
+      <div class="okay"><b>China (28.8), Viet Nam (28.4) and Korea (21.8)</b> overlap most. In Japan, China holds 81% and Korea 9%, while India is sixth with 0.8%. We cannot beat China on cost. We can be the second source Japanese buyers are told to find, with Indian-built safety electronics and traceable cells.</div>
     </div>
   </div>
 </section>
 
 <section class="step" id="s3">
-  <div class="stepno">Step 3</div>
-  <h2>Which market first, and why?</h2>
-  <p>Five markets pass the screen: the two biggest importers (Germany, USA), the fastest-growing large one (Australia, +63% a year) and the two where India already sells (Japan, UAE). Scores come from fixed rules applied to the evidence. Your weights decide the winner.</p>
+  <div class="shead"><div class="badge">3</div><div><div class="stepno">Step 3 of 6 · Market choice</div><h2>Which market first, and why?</h2></div></div>
+  <p class="intro">Five markets pass the screen: the two biggest importers (Germany, USA), the fastest-growing large one (Australia, +63% a year) and the two where India already sells (Japan, UAE). Scores come from fixed rules applied to the evidence. Your weights decide the winner.</p>
   <div class="tw"><table id="evid"></table></div>
   <div class="src">Imports and growth: Trade Map 2025, growth 2021-25. Price: China's FOB unit value into each market ($/t), used because importers report in different units. Duties: MacMap 2026. Route: shipping lanes and 2026 news.</div>
   <h3>Scoring rules, set before scoring</h3>
   <div class="tw"><table>
-    <tr><th>Criterion</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+    <tr><th>Criterion</th><th class="h1">1</th><th class="h2">2</th><th class="h3">3</th><th class="h4">4</th><th class="h5">5</th></tr>
     <tr><td>Size, imports $m</td><td>&lt;1,000</td><td>1,000-2,500</td><td>2,500-5,000</td><td>5,000-15,000</td><td>&gt;15,000</td></tr>
     <tr><td>Growth, %/yr</td><td>&lt;5</td><td>5-15</td><td>15-25</td><td>25-40</td><td>&gt;40</td></tr>
     <tr><td>Price, $/t</td><td>&lt;11k</td><td>11-13k</td><td>13-17k</td><td>17-22k</td><td>&gt;22k</td></tr>
@@ -171,32 +286,37 @@ footer{padding:22px 0 40px;font-size:12.5px;color:var(--muted)}
     <tr><td>Access (minus 1 if India pays more than best rival)</td><td>Barred</td><td>&gt;5%</td><td>2.6-5%</td><td>0.1-2.5%</td><td>0%</td></tr>
     <tr><td>Route risk</td><td>Blocked</td><td>Chokepoint in crisis</td><td>Long or disrupted</td><td>-</td><td>Short, safe</td></tr>
   </table></div>
-  <h3>Your weights</h3>
-  <div class="presets" id="presets"></div>
-  <div id="wts"></div>
-  <p class="src" id="wsum"></p>
-  <div class="two">
-    <div><h3 id="winTitle"></h3><div id="bars"></div></div>
-    <div><h3>Weight check: four exporter profiles</h3><div class="tw"><table id="prof"></table></div><p id="profTxt"></p></div>
+  <div class="two" style="margin-top:8px">
+    <div>
+      <h3>Your weights</h3>
+      <div class="seg" id="presets"></div>
+      <div id="wts"></div>
+      <p class="src" id="wsum"></p>
+    </div>
+    <div>
+      <h3 id="winTitle"></h3><div id="bars"></div>
+    </div>
   </div>
+  <h3>Weight check: four exporter profiles</h3>
+  <div class="tw"><table id="prof"></table></div>
+  <div class="okay" id="profTxt"></div>
 </section>
 
 <section class="step" id="s4">
-  <div class="stepno">Step 4</div>
-  <h2>How much can we sell in year 1?</h2>
+  <div class="shead"><div class="badge">4</div><div><div class="stepno">Step 4 of 6 · How much</div><h2>How much can we sell in year 1?</h2></div></div>
   <div class="two">
-    <div>
+    <div class="sub">
       <h3>Bottom-up: what can one line ship?</h3>
-      <div class="ctl"><label for="ppw">Packs a week</label><input type="range" id="ppw" min="20" max="400" step="10"><span><input type="number" id="ppwn" min="20" max="400" step="10"> <span class="u">packs</span></span></div>
-      <div class="ctl"><label for="wks">Weeks of supply a year</label><input type="range" id="wks" min="4" max="52" step="1"><span><input type="number" id="wksn" min="4" max="52" step="1"> <span class="u">weeks</span></span></div>
-      <div class="ctl"><label for="price">Price a pack, CIF</label><input type="range" id="price" min="400" max="1200" step="10"><span><input type="number" id="pricen" min="400" max="1200" step="10"> <span class="u">US$</span></span></div>
+      <div class="ctl"><label for="ppw">Packs a week</label><input type="range" id="ppw" min="20" max="400" step="10"><span><input type="number" id="ppwn" min="20" max="400" step="10"><span class="u">packs</span></span></div>
+      <div class="ctl"><label for="wks">Weeks of supply a year</label><input type="range" id="wks" min="4" max="52" step="1"><span><input type="number" id="wksn" min="4" max="52" step="1"><span class="u">weeks</span></span></div>
+      <div class="ctl"><label for="price">Price a pack, CIF</label><input type="range" id="price" min="400" max="1200" step="10"><span><input type="number" id="pricen" min="400" max="1200" step="10"><span class="u">US$</span></span></div>
       <div class="calc" id="volCalc"></div>
       <p id="priceTxt"></p>
     </div>
-    <div>
+    <div class="sub">
       <h3>Top-down: is that realistic?</h3>
       <div class="ctl"><label for="mkt">Market we size for</label><select id="mkt"></select><span class="u" id="mktAuto"></span></div>
-      <div class="ctl"><label for="shr">Realistic share for a newcomer</label><input type="range" id="shr" min="0.02" max="1" step="0.01"><span><input type="number" id="shrn" min="0.02" max="1" step="0.01"> <span class="u">%</span></span></div>
+      <div class="ctl"><label for="shr">Realistic share for a newcomer</label><input type="range" id="shr" min="0.02" max="1" step="0.01"><span><input type="number" id="shrn" min="0.02" max="1" step="0.01"><span class="u">%</span></span></div>
       <div class="calc" id="tdCalc"></div>
       <div id="tdBox"></div>
     </div>
@@ -204,37 +324,37 @@ footer{padding:22px 0 40px;font-size:12.5px;color:var(--muted)}
 </section>
 
 <section class="step" id="s5">
-  <div class="stepno">Step 5</div>
-  <h2>Money and risk</h2>
-  <div class="two">
+  <div class="shead"><div class="badge">5</div><div><div class="stepno">Step 5 of 6 · Money and risk</div><h2>Money and risk</h2></div></div>
+  <div class="two wl">
     <div>
       <h3>Cost of one pack (US$)</h3>
       <div id="costs"></div>
       <div class="ctl"><label for="fx">Rupees per US$</label><span></span><span><input type="number" id="fx" min="70" max="120" step="0.1"></span></div>
-      <div class="ctl"><label for="fixed">Fixed costs a year</label><input type="range" id="fixed" min="50" max="800" step="5"><span><input type="number" id="fixedn" min="50" max="800" step="5"> <span class="u">Rs lakh</span></span></div>
+      <div class="ctl"><label for="fixed">Fixed costs a year</label><input type="range" id="fixed" min="50" max="800" step="5"><span><input type="number" id="fixedn" min="50" max="800" step="5"><span class="u">Rs lakh</span></span></div>
       <p class="src">Fixed costs: certification (UN38.3, IEC 62619, JIS) Rs 33 lakh, Japan agent and marketing 40, export and QA team 60, line depreciation and rent 80, product liability insurance 15.</p>
     </div>
     <div>
-      <h3>Margin and break-even</h3>
+      <h3>Where each dollar of price goes</h3>
       <div id="stack"></div>
       <div class="calc" id="beCalc"></div>
     </div>
   </div>
+  <hr class="sep">
   <h3>Stress test: two things that hurt</h3>
   <div class="tw"><table id="stressIn"></table></div>
   <div class="tw"><table id="stress"></table></div>
-  <p id="stressTxt"></p>
+  <div class="note" id="stressTxt"></div>
 </section>
 
 <section class="step" id="s6">
-  <div class="stepno">Step 6</div>
-  <h2>Can we get in, and what do we do?</h2>
-  <p>Pick a market to see the door from India and from two rivals. Then tick what is ready.</p>
-  <div class="presets" id="accBtns"></div>
+  <div class="shead"><div class="badge">6</div><div><div class="stepno">Step 6 of 6 · Access</div><h2>Can we get in, and what do we do?</h2></div></div>
+  <p class="intro">Pick a market to see the door from India and from two rivals. Then tick what is ready.</p>
+  <div class="seg" id="accBtns"></div>
   <div id="accBox"></div>
+  <hr class="sep">
   <div class="two">
     <div>
-      <h3>Route and plan</h3>
+      <h3 id="routeTitle">Route and plan</h3>
       <div id="planBox"></div>
     </div>
     <div>
@@ -247,32 +367,41 @@ footer{padding:22px 0 40px;font-size:12.5px;color:var(--muted)}
 </section>
 </main>
 
-<aside class="plan" aria-live="polite">
-  <h2>Export plan, year 1</h2>
-  <dl>
-    <dt>Product</dt><dd>5 kWh LFP pack, HS 8507.60</dd>
-    <dt>First market</dt><dd id="pMkt"></dd>
+<aside class="plan" id="plan" aria-live="polite">
+  <div class="ph">
+    <div class="k">Export plan, year 1</div>
+    <h2>5 kWh LFP pack, HS 8507.60</h2>
+    <div class="m">First market: <b id="pMkt"></b></div>
+  </div>
+  <div class="pbody">
     <div class="hl" id="pHead"></div>
-    <dt>Edge (RCA)</dt><dd id="pRca"></dd>
-    <dt>Volume</dt><dd id="pVol"></dd>
-    <dt>Revenue</dt><dd id="pRev"></dd>
-    <dt>Share of target market</dt><dd id="pShare"></dd>
-    <dt>Margin a pack</dt><dd id="pMargin"></dd>
-    <dt>Profit, base case</dt><dd id="pProf"></dd>
-    <dt>Break-even</dt><dd id="pBe"></dd>
-    <dt>Worst-case profit</dt><dd id="pWorst"></dd>
-    <dt>Plan B market</dt><dd id="pB"></dd>
-    <dt>Ready for the border</dt><dd id="pReady"></dd>
-  </dl>
-  <div class="foot">Market data: ITC Trade Map and MacMap, 2025-26. Costs are assumptions from 2025-26 price surveys and lab quotes. Rupee figures at the exchange rate set in Step 5.</div>
+    <div class="hls">volume and revenue at the current inputs</div>
+    <div class="duo">
+      <div><div class="v"><span id="pProf"></span></div><div class="l">Profit, base case</div></div>
+      <div><div class="v"><span id="pWorst"></span></div><div class="l">Worst-case profit</div></div>
+    </div>
+    <div class="meter"><div class="t"><span>Break-even point</span><span id="beLbl"></span></div><div class="tr"><span id="beBar"></span></div></div>
+    <dl>
+      <dt>Edge (RCA)</dt><dd id="pRca"></dd>
+      <dt>Volume</dt><dd id="pVol"></dd>
+      <dt>Revenue</dt><dd id="pRev"></dd>
+      <dt>Share of target market</dt><dd id="pShare"></dd>
+      <dt>Margin a pack</dt><dd id="pMargin"></dd>
+      <dt>Break-even</dt><dd id="pBe"></dd>
+      <dt>Plan B market</dt><dd id="pB"></dd>
+      <dt>Ready for the border</dt><dd id="pReady"></dd>
+    </dl>
+    <div class="foot">Market data: ITC Trade Map and MacMap, 2025-26. Costs are assumptions from 2025-26 price surveys and lab quotes. Rupee figures at the exchange rate set in Step 5.</div>
+  </div>
 </aside>
 </div>
 
-<footer><div class="wrap">
+<a class="mbar" href="#plan"><div>Revenue<b id="mRev"></b></div><div>Profit<b id="mProf"></b></div><div>Break-even<b id="mBe"></b></div></a>
+
+<footer><div class="wrap"><div>
   <p><b>Sources.</b> ITC Trade Map (HS 850760: exporters, importers, India by partner, rivals by partner, Japan and Australia by supplier, time series 2016-2025, accessed 26 Nov 2026). ITC Market Access Map (tariffs 2026, trade remedies, NTMs, accessed 26 Nov 2026). BloombergNEF Battery Price Survey (Dec 2025). Benchmark Minerals cell price review Q3 2026. USTR Section 301 notices (2024 review, and the July 2026 forced-labour action with Li-ion 8507.60 exempt). FBIL reference rate, Nov 2026.</p>
   <p>Built for Trade Analytics, GLIM Chennai. Verify every tariff in MacMap before quoting a buyer.</p>
-</div></footer>
-
+</div></div></footer>
 <script>
 (function(){
 "use strict";
@@ -296,8 +425,14 @@ var MK={
  USA:{imp:20084.8,g:26,p:12682,ind:0.02,duty:3.4,best:0,route:3,rt:"Longest haul, 25-35 days"},
  UAE:{imp:643.4,g:46,p:10810,ind:0.52,duty:2.5,best:4.5,route:2,rt:"Through the Strait of Hormuz, disrupted in 2026"}
 };
+var RTS={Japan:[["Sriperumbudur plant","Pack, test, UN-spec crate"],["Chennai / Kattupalli","Class 9 DG (UN3480)"],["Strait of Malacca","No 2026 chokepoint"],["Yokohama / Nagoya","14-16 days"]],
+ Australia:[["Sriperumbudur plant","AS/NZS-certified packs"],["Chennai","Class 9 DG (UN3480)"],["Indian Ocean","No chokepoint"],["Melbourne / Sydney","16-20 days"]],
+ Germany:[["Sriperumbudur plant","EU battery passport"],["Chennai","Class 9 DG (UN3480)"],["Red Sea or Cape","Disrupted in 2026"],["Hamburg","25-38 days"]],
+ USA:[["Sriperumbudur plant","UL 1973 packs"],["Chennai","Class 9 DG (UN3480)"],["Suez or Pacific","Longest haul"],["Los Angeles / New York","25-35 days"]],
+ UAE:[["Sriperumbudur plant","Pack and test"],["Chennai / Mundra","Class 9 DG (UN3480)"],["Strait of Hormuz","2026 crisis"],["Jebel Ali","7-10 days if open"]]};
 var CRIT=["Size","Growth","Price","India foothold","Access","Route risk"];
 var PRE={"Balanced":[20,20,15,15,15,15],"Growth-seeker":[15,35,10,10,15,15],"Risk-averse":[10,10,15,20,20,25],"Size-seeker":[40,15,10,10,15,10]};
+var SHORT=["Cells (5 kWh)","BMS and enclosure","Assembly and test","DG packing","Freight and insurance","Warranty, agent, finance","Margin"];
 var COSTN=["Cells (5 kWh)","BMS, enclosure, wiring, thermal","Assembly and end-of-line test","UN-spec dangerous-goods packing","Sea freight and insurance","Warranty, agent commission, export finance"];
 var ACCESS={
  Japan:{rows:[["India","0%","-","0%","None"],["China","0%","-","0%","None"],["Korea","0%","-","0%","None"]],ntm:"11 measures (UNCTAD)",
@@ -339,7 +474,7 @@ function build(){
     a.value=S.c[i];b.value=S.c[i];a.addEventListener("input",function(e){set(e.target.value);});b.addEventListener("change",function(e){set(e.target.value);});});
   $("presets").innerHTML=Object.keys(PRE).map(function(k){return '<button type="button" data-p="'+k+'">'+k+'</button>';}).join("");
   $("presets").addEventListener("click",function(e){var k=e.target.getAttribute("data-p");if(!k)return;S.w=PRE[k].slice();CRIT.forEach(function(n,i){$("w"+i).value=S.w[i];});render();});
-  $("wts").innerHTML=CRIT.map(function(n,i){return '<div class="ctl"><label for="w'+i+'">'+n+'</label><input type="range" id="w'+i+'" min="0" max="60" step="5"><span class="mono" id="w'+i+'v"></span></div>';}).join("");
+  $("wts").innerHTML=CRIT.map(function(n,i){return '<div class="ctl"><label for="w'+i+'">'+n+'</label><input type="range" id="w'+i+'" min="0" max="60" step="5"><span class="wv" id="w'+i+'v"></span></div>';}).join("");
   CRIT.forEach(function(n,i){var a=$("w"+i);a.value=S.w[i];a.addEventListener("input",function(e){S.w[i]=+e.target.value;render();});});
   $("mkt").innerHTML='<option value="auto">Scorecard winner</option>'+Object.keys(MK).map(function(k){return '<option value="'+k+'">'+k+'</option>';}).join("");
   $("mkt").value=S.mkt;$("mkt").addEventListener("change",function(e){S.mkt=e.target.value;render();});
@@ -352,7 +487,7 @@ function build(){
     el.addEventListener("change",function(e){var v=+e.target.value;if(isNaN(v))v=0;v=Math.min(+el.max,Math.max(+el.min,v));el.value=v;S.st[j][f]=v;render();});});});
   $("accBtns").innerHTML=Object.keys(MK).map(function(k){return '<button type="button" data-m="'+k+'">'+k+'</button>';}).join("");
   $("accBtns").addEventListener("click",function(e){var k=e.target.getAttribute("data-m");if(!k)return;S.acc=k;render();});
-  $("chk").innerHTML=CHK.map(function(c,i){return '<label><input type="checkbox" id="k'+i+'"> '+c+'</label>';}).join("");
+  $("chk").innerHTML=CHK.map(function(c,i){return '<label class="ck" id="kl'+i+'"><input type="checkbox" id="k'+i+'"><span>'+c+'</span></label>';}).join("");
   CHK.forEach(function(c,i){var k=$("k"+i);k.checked=!!S.chk[i];k.addEventListener("change",function(){S.chk[i]=k.checked;render();});});
   $("reset").addEventListener("click",function(){S=clone(DEF);try{localStorage.removeItem("liion_plan_v1");}catch(e){}
     ["shP","shW","ppw","wks","price","fixed","shr"].forEach(function(k){$(k).value=S[k];$(k+"n").value=S[k];});$("fx").value=S.fx;$("mkt").value=S.mkt;
@@ -364,20 +499,22 @@ function build(){
   drawTrend();drawEsi();
 }
 
-function svgBars(items,max,fmt,hi){var h=items.length*26+6,w=420;var s='<svg viewBox="0 0 '+w+' '+h+'" width="100%" role="img">';
-  items.forEach(function(it,i){var y=i*26+4,bw=Math.max(2,(it[1]/max)*(w-170));
-    s+='<text x="0" y="'+(y+14)+'" font-size="12.5" fill="#1E2124">'+it[0]+'</text><rect x="110" y="'+(y+2)+'" width="'+bw+'" height="16" fill="'+(hi&&hi(it,i)?"#0E6B5E":"#B9C9C4")+'"></rect><text x="'+(116+bw)+'" y="'+(y+14)+'" font-size="12" fill="#1E2124">'+fmt(it[1])+'</text>';});
+function svgBars(items,max,fmt,hi){var h=items.length*30+6,w=440;var s='<svg viewBox="0 0 '+w+' '+h+'" width="100%" role="img">';
+  items.forEach(function(it,i){var y=i*30+4,bw=Math.max(3,(it[1]/max)*(w-180)),on=hi&&hi(it,i);
+    s+='<text x="0" y="'+(y+15)+'" font-size="13" font-weight="'+(on?700:400)+'" fill="#18211F">'+it[0]+'</text><rect x="104" y="'+(y+2)+'" width="'+(w-180)+'" height="18" rx="5" fill="#F0F4F3"></rect><rect x="104" y="'+(y+2)+'" width="'+bw+'" height="18" rx="5" fill="'+(on?"#0E5E55":"#A9C3BC")+'"></rect><text x="'+(110+bw)+'" y="'+(y+15)+'" font-size="12.5" font-weight="700" fill="'+(on?"#0E5E55":"#5A6966")+'">'+fmt(it[1])+'</text>';});
   return s+'</svg>';}
 function drawEsi(){$("esi").innerHTML=svgBars(ESI,30,function(v){return v.toFixed(1);},function(it,i){return i<3;});}
-function drawTrend(){var w=440,h=180,pl=36,pb=24,max=140;var x=function(i){return pl+i*(w-pl-10)/9;},y=function(v){return h-pb-(v/max)*(h-pb-10);};
+function drawTrend(){var w=460,h=210,pl=40,pb=26,max=150;var x=function(i){return pl+i*(w-pl-14)/9;},y=function(v){return h-pb-(v/max)*(h-pb-14);};
   var s='<svg viewBox="0 0 '+w+' '+h+'" width="100%" role="img" aria-label="India exports of Li-ion batteries 2016 to 2025">';
-  [0,50,100].forEach(function(g){s+='<line x1="'+pl+'" x2="'+(w-10)+'" y1="'+y(g)+'" y2="'+y(g)+'" stroke="#D9D5CC"/><text x="0" y="'+(y(g)+4)+'" font-size="11" fill="#5E6369">$'+g+'m</text>';});
+  [0,50,100,150].forEach(function(g){s+='<line x1="'+pl+'" x2="'+(w-10)+'" y1="'+y(g)+'" y2="'+y(g)+'" stroke="#E3EAE7"/><text x="0" y="'+(y(g)+4)+'" font-size="11" fill="#5A6966">$'+g+'m</text>';});
   var p1=TREND.map(function(t,i){return x(i)+","+y(t[1]);}).join(" "),p2=TJP.map(function(v,i){return x(i)+","+y(v);}).join(" ");
-  s+='<polyline points="'+p1+'" fill="none" stroke="#1E2124" stroke-width="2"/><polyline points="'+p2+'" fill="none" stroke="#0E6B5E" stroke-width="2.5"/>';
-  TREND.forEach(function(t,i){if(i%3===0||i===9)s+='<text x="'+x(i)+'" y="'+(h-6)+'" font-size="11" text-anchor="middle" fill="#5E6369">'+t[0]+'</text>';});
-  s+='<text x="'+(x(7)+6)+'" y="'+(y(138)+4)+'" font-size="11.5" fill="#1E2124">World</text><text x="'+(x(9)-2)+'" y="'+(y(26)-8)+'" font-size="11.5" text-anchor="end" fill="#0E6B5E">Japan</text>';
+  s+='<polygon points="'+x(0)+','+y(0)+' '+p2+' '+x(9)+','+y(0)+'" fill="#0E5E55" opacity=".12"/>';
+  s+='<polyline points="'+p1+'" fill="none" stroke="#7C8B88" stroke-width="2" stroke-linejoin="round"/><polyline points="'+p2+'" fill="none" stroke="#0E5E55" stroke-width="3" stroke-linejoin="round"/>';
+  TREND.forEach(function(t,i){s+='<circle cx="'+x(i)+'" cy="'+y(t[1])+'" r="2.5" fill="#7C8B88"/><circle cx="'+x(i)+'" cy="'+y(TJP[i])+'" r="3" fill="#0E5E55"/>';if(i%3===0||i===9)s+='<text x="'+x(i)+'" y="'+(h-6)+'" font-size="11" text-anchor="middle" fill="#5A6966">'+t[0]+'</text>';});
+  s+='<text x="'+(x(7)-8)+'" y="'+(y(138)+4)+'" font-size="11.5" font-weight="700" text-anchor="end" fill="#18211F">All markets, $138 m peak</text><text x="'+(x(9)-4)+'" y="'+(y(26)-10)+'" font-size="11.5" font-weight="700" text-anchor="end" fill="#0E5E55">Japan $26 m</text>';
   $("trend").innerHTML=s+'</svg>';}
-
+function paint(){[].forEach.call(document.querySelectorAll('input[type=range]'),function(r){r.style.setProperty("--p",((r.value-r.min)/(r.max-r.min)*100)+"%");});}
+function chip(v){return '<span class="chip '+(v==="0%"?"g":"c")+'">'+v+'</span>';}
 function calc(){
   var rca=S.shP/S.shW, r=rank(S.w), win=r[0].k, tgt=S.mkt==="auto"?win:S.mkt;
   var planB=r.filter(function(x){return x.k!==tgt;})[0].k;
@@ -396,15 +533,15 @@ function render(){
   $("rcaCalc").textContent="RCA = "+S.shP.toFixed(3)+"% / "+S.shW.toFixed(2)+"% = "+R.rca.toFixed(3);
   $("rcaTxt").innerHTML=R.rca<1?"An RCA of <b>"+R.rca.toFixed(2)+"</b> means India's share of battery exports is far below its share of all exports: <b>no revealed advantage</b>. The plan has to rest on a niche, not on the country.":"An RCA above 1 would signal a revealed advantage.";
   CRIT.forEach(function(n,i){$("w"+i+"v").textContent=S.w[i]+"%";});
-  var tw=S.w.reduce(function(a,b){return a+b;},0);$("wsum").textContent="Weights add to "+tw+"%; they are rescaled to 100% for scoring.";
+  var tw=S.w.reduce(function(a,b){return a+b;},0);$("wsum").textContent="Weights add to "+tw+"%, rescaled to 100% for scoring.";
   [].forEach.call($("presets").children,function(b){b.classList.toggle("on",PRE[b.getAttribute("data-p")].join()===S.w.join());});
-  $("evid").innerHTML='<tr><th>Market</th><th>Imports $m</th><th>Growth %/yr</th><th>Price $/t</th><th>India share %</th><th>India duty</th><th>Best rival duty</th><th class="l">Route</th><th>Scores</th></tr>'+
-    Object.keys(MK).map(function(k){var m=MK[k];return '<tr'+(k===R.win?' class="win"':'')+'><td>'+k+'</td><td>'+nf(m.imp)+'</td><td>'+m.g+'</td><td>'+nf(m.p)+'</td><td>'+m.ind.toFixed(2)+'</td><td>'+m.duty+'%</td><td>'+m.best+'%</td><td class="l">'+m.rt+'</td><td class="mono">'+scores(k).join(" ")+'</td></tr>';}).join("");
+  $("evid").innerHTML='<tr><th>Market</th><th>Imports $m</th><th>Growth %/yr</th><th>Price $/t</th><th>India share %</th><th>India duty</th><th>Best rival duty</th><th class="l">Route</th><th>Scores: size, growth, price, foothold, access, route</th></tr>'+
+    Object.keys(MK).map(function(k){var m=MK[k];return '<tr'+(k===R.win?' class="win"':'')+'><td>'+k+'</td><td>'+nf(m.imp)+'</td><td>'+m.g+'</td><td>'+nf(m.p)+'</td><td>'+m.ind.toFixed(2)+'</td><td>'+m.duty+'%</td><td>'+m.best+'%</td><td class="l">'+m.rt+'</td><td style="white-space:nowrap">'+scores(k).map(function(v){return '<span class="sc s'+v+'">'+v+'</span>';}).join("")+'</td></tr>';}).join("");
   $("winTitle").textContent=R.win+" ranks first with "+R.r[0].s.toFixed(2)+" out of 5";
   $("bars").innerHTML=svgBars(R.r.map(function(x){return [x.k,x.s];}),5,function(v){return v.toFixed(2);},function(it,i){return i===0;});
   var profs=Object.keys(PRE),wins={};
   var head='<tr><th>Market</th>'+profs.map(function(p){return '<th>'+p+'</th>';}).join("")+'<th>Your weights</th></tr>';
-  var rowsP=Object.keys(MK).map(function(k){return '<tr><td>'+k+'</td>'+profs.map(function(p){var rr=rank(PRE[p]);if(rr[0].k===k)wins[k]=(wins[k]||0)+1;return '<td'+(rr[0].k===k?' style="font-weight:700;color:#0E6B5E"':'')+'>'+weighted(k,PRE[p]).toFixed(2)+'</td>';}).join("")+'<td'+(R.win===k?' style="font-weight:700;color:#0E6B5E"':'')+'>'+weighted(k,S.w).toFixed(2)+'</td></tr>';}).join("");
+  var rowsP=Object.keys(MK).map(function(k){return '<tr><td>'+k+'</td>'+profs.map(function(p){var rr=rank(PRE[p]);if(rr[0].k===k)wins[k]=(wins[k]||0)+1;return '<td'+(rr[0].k===k?' style="font-weight:700;color:#0E5E55;background:#DCEBE7"':'')+'>'+weighted(k,PRE[p]).toFixed(2)+'</td>';}).join("")+'<td'+(R.win===k?' style="font-weight:700;color:#0E5E55;background:#DCEBE7"':'')+'>'+weighted(k,S.w).toFixed(2)+'</td></tr>';}).join("");
   $("prof").innerHTML=head+rowsP;
   var best=Object.keys(wins).sort(function(a,b){return wins[b]-wins[a];})[0];
   $("profTxt").innerHTML="<b>"+best+" wins "+wins[best]+" of 4 profiles.</b> "+(wins["Australia"]?"Australia wins only for a growth-seeker: it is the fastest-growing market, but India has no foothold there and no tariff edge over China. It is Plan B.":"");
@@ -418,10 +555,10 @@ function render(){
   $("tdBox").innerHTML='<div class="'+(pct<=120&&pct>=50?"okay":"note")+'">Bottom-up is <b>'+pct.toFixed(0)+'%</b> of the top-down ceiling, or <b>'+(R.share*100).toFixed(2)+'%</b> of '+R.tgt+"'s imports. "+msg+(R.tgt==="Japan"?" India as a whole already holds 0.84% of Japan's imports.":"")+'</div>';
   // stack
   var parts=COSTN.map(function(n,i){return [n,S.c[i]];}).concat([["Margin",Math.max(0,R.m)]]);
-  var w=460,y=0,s='<svg viewBox="0 0 '+w+' '+(parts.length*24+8)+'" width="100%" role="img">';
-  var cols=["#7F8C87","#98A6A1","#B1BEB9","#C4CFCB","#D6DEDB","#E3E9E7","#0E6B5E"];
-  parts.forEach(function(p,i){var bw=Math.max(2,p[1]/Math.max(S.price,R.cost)*(w-260));y=i*24+4;
-    s+='<text x="0" y="'+(y+13)+'" font-size="11.5" fill="#1E2124">'+p[0]+'</text><rect x="250" y="'+(y+1)+'" width="'+bw+'" height="15" fill="'+cols[i]+'"/><text x="'+(254+bw)+'" y="'+(y+13)+'" font-size="11.5">$'+nf(p[1])+'</text>';});
+  var w=370,y=0,s='<svg viewBox="0 0 '+w+' '+(parts.length*26+8)+'" width="100%" role="img">';
+  var cols=["#B4552A","#C97A55","#D89C7E","#E3B9A3","#ECCFBF","#F2DED2","#0E5E55"];
+  parts.forEach(function(p,i){var bw=Math.max(2,p[1]/Math.max(S.price,R.cost)*(w-220));y=i*26+4;
+    s+='<text x="0" y="'+(y+13)+'" font-size="12.5" font-weight="'+(i===parts.length-1?700:400)+'" fill="#18211F">'+SHORT[i]+'</text><rect x="160" y="'+(y+1)+'" width="'+bw+'" height="17" rx="4" fill="'+cols[i]+'"/><text x="'+(166+bw)+'" y="'+(y+13)+'" font-size="12" font-weight="700" fill="'+(i===parts.length-1?"#0E5E55":"#18211F")+'">$'+nf(p[1])+'</text>';});
   $("stack").innerHTML=s+'</svg>';
   $("beCalc").innerHTML="Price $"+S.price+" - cost $"+R.cost+" = margin $"+R.m+" a pack ("+(R.m/S.price*100).toFixed(0)+"%)<br>= Rs "+nf(R.mR)+" a pack at Rs "+S.fx+"/$<br>Break-even = Rs "+nf(S.fixed)+" lakh / Rs "+nf(R.mR)+" = "+(isFinite(R.be)?nf(R.be)+" packs ("+Math.round(R.be/R.vol*100)+"% of plan)":"never: margin is not positive");
   $("stress").innerHTML='<tr><th></th>'+R.sc.map(function(x){return '<th>'+x.n+'</th>';}).join("")+'</tr>'+
@@ -429,17 +566,26 @@ function render(){
     '<tr><td>x Margin a pack</td>'+R.sc.map(function(x){return '<td>Rs '+nf(x.mm)+'</td>';}).join("")+'</tr>'+
     '<tr><td>= Contribution</td>'+R.sc.map(function(x){return '<td>'+lakh(x.c)+'</td>';}).join("")+'</tr>'+
     '<tr><td>- Fixed costs</td>'+R.sc.map(function(){return '<td>'+lakh(R.fixed)+'</td>';}).join("")+'</tr>'+
-    '<tr><td><b>= Profit</b></td>'+R.sc.map(function(x){return '<td style="font-weight:700;color:'+(x.p<0?"#A9521F":"inherit")+'">'+lakh(x.p)+'</td>';}).join("")+'</tr>';
+    '<tr class="tot"><td>= Profit</td>'+R.sc.map(function(x,i){return '<td><span class="chip '+(x.p<0||(i>0&&x===R.worst)?"c":i===0?"g":"n")+'" style="font-size:13px">'+lakh(x.p)+'</span></td>';}).join("")+'</tr>';
   var fall=R.sc[0].p>0?(1-R.worst.p/R.sc[0].p)*100:0;
   $("stressTxt").innerHTML="Worst case: <b>"+R.worst.n+"</b>, profit "+lakh(R.worst.p)+(R.sc[0].p>0?", down "+fall.toFixed(0)+"% from base":"")+". The same fixed costs sit on a thinner margin. Hedge: index the pack price to a published cell-price benchmark, and qualify a second cell supplier.";
   // access
   [].forEach.call($("accBtns").children,function(b){b.classList.toggle("on",b.getAttribute("data-m")===S.acc);});
   var a=ACCESS[S.acc];
-  $("accBox").innerHTML='<div class="tw"><table><tr><th>Exporter into '+S.acc+'</th><th>MFN</th><th>Preferential</th><th>Applied</th><th class="l">Extra duties</th></tr>'+a.rows.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td><b>'+r[3]+'</b></td><td class="l">'+r[4]+'</td></tr>';}).join("")+'</table></div></div>'+
-    '<p><b>Tariff edge:</b> '+a.edge+'</p><p><b>Trade remedies:</b> '+a.rem+'. <b>Non-tariff measures:</b> '+a.ntm+'. '+a.sps+'.</p><p><b>The three that matter:</b></p><ol>'+a.top.map(function(t){return '<li>'+t+'</li>';}).join("")+'</ol><div class="src">Source: ITC Market Access Map, tariff year 2026, accessed 26 Nov 2026; USTR notices for US extra duties.</div>';
-  $("planBox").innerHTML='<p><b>Route to '+R.tgt+':</b> '+MK[R.tgt].rt+'. Packs move as Class 9 dangerous goods (UN3480) by sea at under 30% charge, in UN-spec packaging, from Chennai or Kattupalli port.</p>'+
+  var ind=a.rows[0], best=a.rows.slice(1).map(function(r){return parseFloat(r[3]);}).reduce(function(p,c){return Math.min(p,c);},99), nN=(a.ntm.match(/^\d+/)||["0"])[0];
+  $("accBox").innerHTML='<div class="acc-stats"><div><div class="v'+(ind[3]==="0%"?'':' c')+'">'+ind[3]+'</div><div class="l">Duty India pays into '+S.acc+' (MFN '+ind[1]+')</div></div>'+
+    '<div><div class="v'+(nN==="0"?'':' c')+'">'+nN+'</div><div class="l">Non-tariff measures on 8507.60</div></div>'+
+    '<div><div class="v'+(a.rem.indexOf("None")===0?'':' c')+'">'+(a.rem.indexOf("None")===0?"None":"Check")+'</div><div class="l">Trade remedies in force</div></div></div>'+
+    '<div class="tw"><table><tr><th>Exporter into '+S.acc+'</th><th>MFN</th><th>Preferential</th><th>Applied</th><th class="l">Extra duties</th></tr>'+a.rows.map(function(r,i){return '<tr'+(i===0?' class="win"':'')+'><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+chip(r[3])+'</td><td class="l">'+r[4]+'</td></tr>';}).join("")+'</table></div>'+
+    '<div class="'+(parseFloat(ind[3])<=best?"okay":"note")+'"><b>Tariff edge:</b> '+a.edge+'</div>'+
+    '<div class="two"><div><h3>The three that matter</h3><ol class="three">'+a.top.map(function(t){return '<li><span>'+t+'</span></li>';}).join("")+'</ol></div>'+
+    '<div><h3>Other measures</h3><p><b>Non-tariff measures:</b> '+a.ntm+'.</p><p><b>'+a.sps+'.</b></p><p><b>Trade remedies:</b> '+a.rem+'.</p></div></div>'+
+    '<div class="src">Source: ITC Market Access Map, tariff year 2026, accessed 26 Nov 2026, and USTR notices for US extra duties.</div>';
+  $("routeTitle").textContent="Route to "+R.tgt+" and the plan";
+  $("planBox").innerHTML='<div class="route">'+RTS[R.tgt].map(function(r){return '<div class="st"><div class="dot"></div><b>'+r[0]+'</b>'+r[1]+'</div>';}).join("")+'</div><p><b>Route:</b> '+MK[R.tgt].rt+'. Packs move as Class 9 dangerous goods (UN3480) by sea at under 30% charge, in UN-spec packaging, from Chennai or Kattupalli port.</p>'+
     '<p><b>Main risks:</b> three. A cell-price spike, since China\'s storage cells rose 22% between October 2025 and April 2026. A Chinese price war. And one Japanese buyer taking most of the volume, as Germany did in 2023 before it vanished.</p>'+
     '<p><b>Plan B:</b> '+R.planB+'. '+(R.planB==="Australia"?"Fastest-growing large market (+63% a year), 0% duty under ECTA, no chokepoint on the route. Certify to AS/NZS from year 1 so the switch takes months, not a year.":"Next-highest score on your weights.")+'</p>';
+  CHK.forEach(function(c,i){$("kl"+i).classList.toggle("on",!!S.chk[i]);});
   $("readyBar").style.width=R.ready+"%";$("readyTxt").textContent="Ready: "+R.ready+"% of the border checklist";
   // plan card
   $("pMkt").textContent=R.tgt+(S.mkt==="auto"?" (scorecard)":" (your choice)");
@@ -454,9 +600,19 @@ function render(){
   $("pWorst").textContent=lakh(R.worst.p);$("pWorst").className=R.worst.p<0?"neg":"";
   $("pB").textContent=R.planB;
   $("pReady").textContent=R.ready+"%";
+  var beP=isFinite(R.be)?Math.min(100,R.be/R.vol*100):100;
+  $("beBar").style.width=beP+"%";$("beLbl").textContent=isFinite(R.be)?nf(R.be)+" packs, "+Math.round(R.be/R.vol*100)+"% of plan":"never";
+  $("hRca").textContent=R.rca.toFixed(2);$("hMkt").textContent=R.tgt;$("hRev").textContent=usdm(R.rev);
+  $("hProf").textContent=lakh(R.sc[0].p);$("hProf").className="v"+(R.sc[0].p<0?" c":"");
+  $("mRev").textContent=usdm(R.rev);$("mProf").textContent=lakh(R.sc[0].p);$("mBe").textContent=isFinite(R.be)?nf(R.be)+" packs":"never";
+  paint();
   save();
 }
 build();render();
+var links=[].slice.call(document.querySelectorAll("nav.steps a")),secs=links.map(function(l){return document.querySelector(l.getAttribute("href"));});
+function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i;});links.forEach(function(l,i){l.classList.toggle("active",i===cur);});
+  var d=document.documentElement,p=d.scrollHeight-d.clientHeight;$("prog").style.width=(p>0?window.scrollY/p*100:0)+"%";}
+window.addEventListener("scroll",spy,{passive:true});spy();
 })();
 </script>
 </body>
